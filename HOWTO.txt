@@ -1,0 +1,21 @@
+1. Copy sihpP1006.dl to /lib/udev/script/sihpP1006.dl
+
+2. Add to vi printer-usbdev-check.py after 239 row: sudo vi /lib/udev/script/printer-usbdev-check.py
+
+    # close usbdev.conf and release lock
+    fd.close()
+
+
+    vendorID = printerid.split(':')[0]
+    modelID = printerid.split(':')[1]
+    if (vendorID == '03f0' and modelID == '3e17'):
+        time.sleep(2)
+        subprocess.call('cat /lib/udev/script/sihpP1006.dl > /dev/usb/%s' % devname, shell=True)
+        log_msg('Firmware sihpP1006.dl sent to HP LaserJet P1006 (%s)' % printerid)
+        time.sleep(15)
+        
+    return 0
+    
+3. run docker: sudo sh cups_docker_init.sh
+    
+4. Go to synoIP:631 and add printer. After all close browser - changes will be apply after 60 sec, when close all session.
