@@ -24,6 +24,8 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
         
     return 0
 ```
+**!!! Don't forget to change `<vendorID>`, `<modelID>` and `<your_firmware>.dl` for your own.**
+
 Now you can unplug/plug (or off/on) printer. If all right you should hear your printer wake up and make some noise.
 
 Or you can run `sudo tail -f /var/log/messages` and see `Firmware sent to printer` in output when plugin printer. 
