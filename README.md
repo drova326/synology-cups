@@ -41,6 +41,6 @@ If you have problems check permissions (ls -l /dev/usb/lp0). Must be `crw-rw----
     ```
 * run: `sudo sh container_init.sh`
 * Go to `http://[host ip]:631` using the 'cups/cups'
-* Add your printer (make sure you select 'Share This Printer'). If you use HP printers you must to use `"Foomatic/foo2xqx"` drivers in cups interface.
+* Add your printer (make sure you select 'Share This Printer'). If you use HP printers you must to use `"Foomatic/foo2xqx"` drivers in cups interface. 
   ***After configuring your printer, you need to close the web browser for at least 60 seconds. CUPS will not write the config files until it detects the connection is closed for as long as a minute.***
 * Enjoy
