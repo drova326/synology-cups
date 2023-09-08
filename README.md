@@ -1,6 +1,6 @@
 ## CUPS for DSM7 with firmware downloader mod (for printers like HP)
 
-Fork based on [znetwork/synology-airprint](https://github.com/ziwork/synology-airprint), which based on [quadportnick/docker-cups-airprint](https://github.com/quadportnick/docker-cups-airprint) and [chuckcharlie/docker-cups-airprint](https://github.com/chuckcharlie/docker-cups-airprint)
+Fork from [znetwork/synology-airprint](https://github.com/ziwork/synology-airprint), which based on [quadportnick/docker-cups-airprint](https://github.com/quadportnick/docker-cups-airprint) and [chuckcharlie/docker-cups-airprint](https://github.com/chuckcharlie/docker-cups-airprint)
 
 This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint relay for printers that not Synology capable.
 * `Included drivers HP, Samsung, Canon, Xerox, etc.`
