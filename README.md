@@ -28,6 +28,8 @@ Now you can unplug/plug printer. If all right you should hear your printer wake 
 
 Or you can run `sudo tail -f /var/log/messages` and see `Firmware sent to printer` in output when plugin printer. 
 
+Check permissions (ls -l /dev/usb/lp0). Must be `crw-rw---- 1 root lp 180, 0 Sep  8 10:01 /dev/usb/lp0`
+
 ## Run docker with CUPS
 * Enter to rep dir: `cd <rep_dir>`
 * Create dirs for volums:
