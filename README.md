@@ -33,7 +33,6 @@ Also you can run `sudo tail -f /var/log/messages` you will see `Firmware sent to
 If you have problems check permissions (ls -l /dev/usb/lp0). Must be `crw-rw---- 1 root lp 180, 0 Sep  8 10:01 /dev/usb/lp0`
 
 ## Run docker with CUPS
-* Enter to rep dir: `cd <rep_dir>`
 * Create dirs for volums:
     ```
     -v /volume1/docker/cups/services:/services
@@ -42,6 +41,6 @@ If you have problems check permissions (ls -l /dev/usb/lp0). Must be `crw-rw----
     ```
 * run: `sudo sh container_init.sh`
 * Go to http://[host ip]:631 using the 'cups/cups'
-* Add your printer (make sure you select 'Share This Printer'). If you use HP printers use `"Foomatic/foo2xqx" drivers`  
+* Add your printer (make sure you select 'Share This Printer'). If you use HP printers you must to use `"Foomatic/foo2xqx"` drivers in cups interface.
   ***After configuring your printer, you need to close the web browser for at least 60 seconds. CUPS will not write the config files until it detects the connection is closed for as long as a minute.***
 * Enjoy
