@@ -28,9 +28,9 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
 
 Now you can unplug/plug (or off/on) printer. If all right you should hear your printer wake up and make some noise.
 
-Or you can run `sudo tail -f /var/log/messages` and see `Firmware sent to printer` in output when plugin printer. 
+Also you can run `sudo tail -f /var/log/messages` you will see `Firmware sent to printer` line in output when plugin or poweron printer. 
 
-Check permissions (ls -l /dev/usb/lp0). Must be `crw-rw---- 1 root lp 180, 0 Sep  8 10:01 /dev/usb/lp0`
+If you have problems check permissions (ls -l /dev/usb/lp0). Must be `crw-rw---- 1 root lp 180, 0 Sep  8 10:01 /dev/usb/lp0`
 
 ## Run docker with CUPS
 * Enter to rep dir: `cd <rep_dir>`
