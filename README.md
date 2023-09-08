@@ -8,8 +8,8 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
 ## Make DSM7 download firmware to printer.
 
 * Copy `<your_firmware>.dl` to `/lib/udev/script/<your_firmware>.dl` (from http://oleg.wl500g.info/hplj/ for example)
-* Run `print_info.sh` to get `vendorID` and `modelID` of your printer or use `lsusb`
-* Change `/lib/udev/script/printer-usbdev-check.py` script on your DSM7 after 239 row like this:
+* Run `print_info.sh` or simple use `lsusb` to get `vendorID` and `modelID` of your printer 
+* Edit `/lib/udev/script/printer-usbdev-check.py` script on your DSM7 after 239 row like this:
 ```
     # close usbdev.conf and release lock
     fd.close()
@@ -24,7 +24,7 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
         
     return 0
 ```
-Now you can unplug/plug printer. If all right you should hear your printer wake up and make some noise.
+Now you can unplug/plug (or off/on) printer. If all right you should hear your printer wake up and make some noise.
 
 Or you can run `sudo tail -f /var/log/messages` and see `Firmware sent to printer` in output when plugin printer. 
 
