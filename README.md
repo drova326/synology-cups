@@ -44,7 +44,10 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
     sudo chmod 644 /usr/lib/udev/rules.d/99-hp-custom.rules
     sudo chmod +x /lib/udev/script/firmware_loader.sh
     ```
-* Reboot
+* Reboot or restart udev:
+    ```
+    sudo udevadm control --reload-rules && udevadm trigger
+    ```
 
 **!!! Don't forget to change `<vendorID>`, `<modelID>` and `<your_firmware>.dl` for your own.**
 
