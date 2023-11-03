@@ -52,6 +52,8 @@ Now you can unplug/plug (or off/on) printer. If all right you should hear your p
 
 If you have problems check permissions (ls -l /dev/usb/lp0). Must be `crw-rw---- 1 root lp 180, 0 Sep  8 10:01 /dev/usb/lp0`. Also you can check logs `sudo tail -f /var/log/messages`
 
+After we have connected our DSM7 and printer, let's make the printer network
+
 ## Run docker with CUPS
 * Create dirs for volums:
     ```
