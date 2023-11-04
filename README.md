@@ -30,19 +30,20 @@ This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
 
 ## Another way to autoload firmware:
 
-* Create simple script `/lib/udev/script/firmware_loader.sh`:
+* Create simple script `/lib/firmware/hp/manual_firmware.sh`:
     ```
     #!/bin/sh
-    cat /lib/udev/script/<your_firmware>.dl > /dev/usb/lp0
+    /usr/bin/cat /lib/firmware/hp/<your_firmware>.dl > /dev/usb/lp0
     ```
+    You can copy `firmware` dir from this repo to `/lib`
 * Create rule `/usr/lib/udev/rules.d/99-hp-custom.rules`:
     ```
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="<vendorID>", ATTRS{idProduct}=="<modelID>", GROUP="lp", MODE="777", ACTION=="add", RUN+="/lib/udev/script/firmware_loader.sh"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="<vendorID>", ATTRS{idProduct}=="<modelID>", GROUP="lp", MODE="777", ACTION=="add", RUN+="/lib/firmware/hp/manual_firmware.sh"
     ```
 * Set permittions:
     ```
     sudo chmod 644 /usr/lib/udev/rules.d/99-hp-custom.rules
-    sudo chmod +x /lib/udev/script/firmware_loader.sh
+    sudo chmod +x /lib/firmware/hp/manual_firmware.sh
     ```
 * Reboot DSM or restart udev:
     ```
